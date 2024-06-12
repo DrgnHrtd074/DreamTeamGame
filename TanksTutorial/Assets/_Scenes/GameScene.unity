@@ -961,11 +961,14 @@ MonoBehaviour:
   m_TimerText: {fileID: 537241462}
   m_HighScorePanel: {fileID: 292581687}
   m_HighScoresText: {fileID: 1033542617}
+  m_HealthBar: {fileID: 1350473800}
   m_NewGameButton: {fileID: 387732750}
   m_HighScoresButton: {fileID: 1812501560}
   m_Tanks:
   - {fileID: 2090306553}
   - {fileID: 968619480}
+  healthBar: {fileID: 812978175}
+  healthAmount: 100
 --- !u!4 &315780671
 Transform:
   m_ObjectHideFlags: 0
