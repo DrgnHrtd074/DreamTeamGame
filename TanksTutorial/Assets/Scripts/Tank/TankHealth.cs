@@ -18,6 +18,7 @@ public class TankHealth : MonoBehaviour
     private bool m_Dead;
     public Image healthBar;
     public float healthAmount = 100f;
+    public float maxHealth = 100;
 
     // The particle system that will play when the tank is destroyed
     private ParticleSystem m_ExplosionParticles;
@@ -86,8 +87,19 @@ public class TankHealth : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-        // Start is called before the first frame update
-        void Start()
+    public void Heal(float healAmount)
+    {
+        m_CurrentHealth += healAmount;
+       if (m_CurrentHealth > maxHealth)
+        {
+            m_CurrentHealth = maxHealth;
+        }
+        healthBar.fillAmount = healthAmount / 100f;
+        Debug.Log("Health: " + m_CurrentHealth);
+    }
+
+    // Start is called before the first frame update
+    void Start()
     {
         
     }
