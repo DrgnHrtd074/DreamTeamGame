@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.UI;
+using Image = UnityEngine.UI.Image;
 
 public class TankHealth : MonoBehaviour
 {
@@ -11,8 +14,11 @@ public class TankHealth : MonoBehaviour
     // the tank dies
     public GameObject m_ExplosionPrefab;
 
-    private float m_CurrentHealth;
+    public float m_CurrentHealth;
     private bool m_Dead;
+    public Image healthBar;
+    public float healthAmount = 100f;
+
     // The particle system that will play when the tank is destroyed
     private ParticleSystem m_ExplosionParticles;
 
@@ -33,6 +39,10 @@ public class TankHealth : MonoBehaviour
         // when the tank is enabled, reset the tank's health and whether
         // or not it's dead
         m_CurrentHealth = m_StartingHealth;
+        if (gameObject.tag == "Player")
+        {
+            healthBar.fillAmount = m_StartingHealth;
+        }
         m_Dead = false;
     }
 
@@ -40,6 +50,16 @@ public class TankHealth : MonoBehaviour
     {
         // Reduce current health by the amount of damage done
         m_CurrentHealth -= amount;
+        if(m_CurrentHealth < 0f)
+        {
+            m_CurrentHealth = 0f;
+        }
+
+        if (gameObject.tag == "Player")
+        {
+            healthAmount = m_CurrentHealth;
+            healthBar.fillAmount = healthAmount / 100f;
+        }
 
         // if the current health is at or below zero and it has not yet
         // been registered, call OnDeath
