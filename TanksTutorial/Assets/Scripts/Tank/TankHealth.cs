@@ -107,6 +107,10 @@ public class TankHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameObject.tag == "Player")
+        {
+            healthAmount = m_CurrentHealth;
+            healthBar.fillAmount = healthAmount / 100f;
+        }
     }
 }
