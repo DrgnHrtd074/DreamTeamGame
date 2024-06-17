@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
 
 public class TankHealth : MonoBehaviour
+    //H = Henry addition
 {
     // The amount of health each tank starts with
     public float m_StartingHealth = 100f;
@@ -14,10 +15,10 @@ public class TankHealth : MonoBehaviour
     // the tank dies
     public GameObject m_ExplosionPrefab;
 
-    public float m_CurrentHealth;
+    public float m_CurrentHealth;           //H
     private bool m_Dead;
-    public Image healthBar;
-    public float healthAmount = 100f;
+    public Image healthBar;                 //H
+    public float healthAmount = 100f;       //H
     public float maxHealth = 100;
 
     // The particle system that will play when the tank is destroyed
@@ -40,9 +41,9 @@ public class TankHealth : MonoBehaviour
         // when the tank is enabled, reset the tank's health and whether
         // or not it's dead
         m_CurrentHealth = m_StartingHealth;
-        if (gameObject.tag == "Player")
+        if (gameObject.tag == "Player")     //H
         {
-            healthBar.fillAmount = m_StartingHealth;
+            healthBar.fillAmount = m_StartingHealth;        //H
         }
         m_Dead = false;
     }
@@ -56,10 +57,10 @@ public class TankHealth : MonoBehaviour
             m_CurrentHealth = 0f;
         }
 
-        if (gameObject.tag == "Player")
+        if (gameObject.tag == "Player")     //H
         {
-            healthAmount = m_CurrentHealth;
-            healthBar.fillAmount = healthAmount / 100f;
+            healthAmount = m_CurrentHealth;     //H
+            healthBar.fillAmount = healthAmount / 100f;     //H
         }
 
         // if the current health is at or below zero and it has not yet
@@ -107,10 +108,10 @@ public class TankHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.tag == "Player")
+        if (gameObject.tag == "Player")     //H
         {
-            healthAmount = m_CurrentHealth;
-            healthBar.fillAmount = healthAmount / 100f;
+            healthAmount = m_CurrentHealth;     //H
+            healthBar.fillAmount = healthAmount / 100f;     //H
         }
     }
 }

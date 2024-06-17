@@ -6,21 +6,23 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    //H = Henry addition
+
     public HighScores m_HighScores;
     public TextMeshProUGUI m_MessageText;
     public TextMeshProUGUI m_TimerText;
 
     public GameObject m_HighScorePanel;
     public TextMeshProUGUI m_HighScoresText;
-    public GameObject m_HealthBar;
+    public GameObject m_HealthBar;     //H
 
     public Button m_NewGameButton;
     public Button m_HighScoresButton;
 
     public GameObject[] m_Tanks;
 
-    public Image healthBar;
-    public float healthAmount = 100f;
+    public Image healthBar;     //H
+    public float healthAmount = 100f;     //H
     private float m_gameTime = 0;
 
     public float GameTime {  get { return m_gameTime; } }
@@ -51,12 +53,12 @@ public class GameManager : MonoBehaviour
 
         m_TimerText.gameObject.SetActive(false);
         m_MessageText.text = "Get Ready";
-        healthBar.fillAmount = healthAmount;
+        healthBar.fillAmount = healthAmount;     //H
 
         m_HighScorePanel.gameObject.SetActive(false);
         m_NewGameButton.gameObject.SetActive(false);
         m_HighScoresButton.gameObject.SetActive(false);
-        m_HealthBar.gameObject.SetActive(false);
+        m_HealthBar.gameObject.SetActive(false);     //H
     }
 
     // Update is called once per frame
@@ -125,7 +127,7 @@ public class GameManager : MonoBehaviour
 
             m_NewGameButton.gameObject.SetActive(true);
             m_HighScoresButton.gameObject.SetActive(true);
-            m_HealthBar.gameObject.SetActive(false);
+            m_HealthBar.gameObject.SetActive(false);     //H
 
         }
     }
@@ -150,7 +152,7 @@ public class GameManager : MonoBehaviour
         m_HighScoresButton.gameObject.SetActive(false);
         m_HighScorePanel.SetActive(false);
 
-        m_HealthBar.gameObject.SetActive(true);
+        m_HealthBar.gameObject.SetActive(true);     //H
         m_TimerText.gameObject.SetActive(true);
         m_MessageText.text = "";
 
