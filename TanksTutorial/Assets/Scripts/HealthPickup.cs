@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Jackson White's Addition - Health Pickup
 public class HealthPickup : MonoBehaviour
 {
     public float healthbonus = 15;

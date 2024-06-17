@@ -7,6 +7,7 @@ using Image = UnityEngine.UI.Image;
 
 public class TankHealth : MonoBehaviour
     //H = Henry addition
+    //J = Jackson addition
 {
     // The amount of health each tank starts with
     public float m_StartingHealth = 100f;
@@ -19,7 +20,7 @@ public class TankHealth : MonoBehaviour
     private bool m_Dead;
     public Image healthBar;                 //H
     public float healthAmount = 100f;       //H
-    public float maxHealth = 100;
+    public float maxHealth = 100;           //J
 
     // The particle system that will play when the tank is destroyed
     private ParticleSystem m_ExplosionParticles;
@@ -88,7 +89,7 @@ public class TankHealth : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void Heal(float healAmount)
+    public void Heal(float healAmount) //J
     {
         m_CurrentHealth += healAmount;
        if (m_CurrentHealth > maxHealth)
