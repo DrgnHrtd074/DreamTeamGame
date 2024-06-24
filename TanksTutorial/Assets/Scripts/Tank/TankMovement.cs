@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class TankMovement : MonoBehaviour
 {
@@ -68,5 +69,15 @@ public class TankMovement : MonoBehaviour
 
         // Apply this rotation to the rigidbody's rotation
         m_Rigidbody.MoveRotation(transform.rotation * turnRotation);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Ammo")
+        {
+            Destroy(other.gameObject);
+
+
+        }
     }
 }
