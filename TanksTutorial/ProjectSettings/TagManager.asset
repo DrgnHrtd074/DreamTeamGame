@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Health
+  - Ammo
   layers:
   - Default
   - TransparentFX
